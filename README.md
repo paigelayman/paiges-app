@@ -1,8 +1,8 @@
-# Paige's MERN Project (to be renamed)
+# Paige's Haunted Places
 
 ### Description
 
-This is going to be a full stack app using Mongoose, Express, React, and Node.
+This is going to be a full stack app using Mongoose, Express, React, and Node. The app will have a Nav bar that will take you to About or Home, and Home will show you a list of the most haunted places in the world. The user can click to see more information/pictures, and they will also have an option to add a new place.
 
 ### How to get started
 
@@ -13,6 +13,14 @@ This is going to be a full stack app using Mongoose, Express, React, and Node.
 
 ### Credits
 
-### Trello Board Link:
+#### Trello Board Link:
 
 https://trello.com/b/swxH7oOx/mern-project
+
+#### CHD Link:
+
+https://lucid.app/lucidchart/3d56114a-9468-4842-b27f-6677f757155c/edit?viewport_loc=-356%2C-213%2C1371%2C1075%2C0_0&invitationId=inv_464f9d0a-7e90-4651-a429-863c28ac05a2
+
+#### GitHub Link:
+
+https://github.com/paigelayman/paigeshauntedplaces
