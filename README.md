@@ -1,5 +1,7 @@
 # Paige's Haunted Places
 
+<img src="https://www.hauntedrooms.co.uk/wp-content/uploads/2021/12/Haunted-Island-of-the-Dolls-500x333.jpeg"/>
+
 ### Description
 
 This is going to be a full stack app using Mongoose, Express, React, and Node. The app will have a Nav bar that will take you to About or Home, and Home will show you a list of the most haunted places in the world. The user can click to see more information/pictures, and they will also have an option to add a new place.
@@ -12,6 +14,8 @@ This is going to be a full stack app using Mongoose, Express, React, and Node. T
 - To make edits, open in VS code with `code .`
 
 ### Credits
+
+https://www.hauntedrooms.co.uk/21-most-haunted-places-in-the-world
 
 #### Trello Board Link:
 
