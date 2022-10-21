@@ -1,0 +1,18 @@
+const express = require('express')
+const PORT = process.env.PORT || 3001
+const db = require('./db')
+const { Country } = require('./models')
+
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send({ msg: 'route being hit' })
+})
+
+app.post('/countries', (req, res) => {
+  res.send('country post route hit')
+})
+
+app.listen(PORT, () => {
+  console.log(`Express server listening on ${PORT}`)
+})
