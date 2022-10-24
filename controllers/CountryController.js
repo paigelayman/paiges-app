@@ -1,5 +1,5 @@
-const Country = require('../models/country')
-const { application } = require('express')
+const { Country, Place } = require('../models')
+const express = require('express')
 
 // app.post('/countries', async (req, res) => {
 //   let newCountry = await Country.create(req.body)
@@ -9,7 +9,7 @@ const { application } = require('express')
 const getCountries = async (req, res) => {
   try {
     let allCountries = await Country.find({})
-    return res.json(allCountries)
+    res.json(allCountries)
   } catch (error) {
     return res.status(500).send(error.message)
   }
