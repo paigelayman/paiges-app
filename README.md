@@ -29,3 +29,8 @@ https://github.com/paigelayman/paigeshauntedplaces
 
 https://www.hauntedrooms.co.uk/21-most-haunted-places-in-the-world
 https://whyy.org/articles/history-behind-the-walls-how-philadelphias-most-famous-haunted-house-began/
+https://www.therealwaverlyhills.com/rules/
+https://www.sbs.com.au/movies/review/muirhouse-review
+https://www.kayak.co.uk/news/most-haunted-places-in-the-world/
+https://evanevanstours.com/blog/the-uks-most-haunted-locations/
+https://www.haunted-houses.co.uk/ancient-ram-inn-ghost-hunt/
