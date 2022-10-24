@@ -19,7 +19,7 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(formState)
-    let newCountry = await axios
+    let addedCountry = await axios
       .post('http://localhost:3001/countries', formState)
       .then((response) => {
         return response
@@ -27,8 +27,9 @@ function App() {
       .catch((error) => {
         return error
       })
-    updateCountries([...countries, newCountry.data])
-    setFormState({ name: '', image: '', place: '' })
+    console.log(addedCountry)
+    // updateCountries([...countries, newCountry.data])
+    // setFormState({ name: '', image: '', place: '' })
   }
 
   return (
@@ -43,7 +44,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
-        <label htmlFor="image">Image:</label>
+        <label htmlFor="image">Image Link:</label>
         <input id="image" value={formState.image} onChange={handleChange} />
         <label htmlFor="places">Place:</label>
         <input id="place" value={formState.place} onChange={handleChange} />
