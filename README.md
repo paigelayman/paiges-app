@@ -13,10 +13,6 @@ This is going to be a full stack app using Mongoose, Express, React, and Node. T
 - Open in broswer with `open.html`
 - To make edits, open in VS code with `code .`
 
-### Credits
-
-https://www.hauntedrooms.co.uk/21-most-haunted-places-in-the-world
-
 #### Trello Board Link:
 
 https://trello.com/b/swxH7oOx/mern-project
@@ -28,3 +24,8 @@ https://lucid.app/lucidchart/3d56114a-9468-4842-b27f-6677f757155c/edit?viewport_
 #### GitHub Link:
 
 https://github.com/paigelayman/paigeshauntedplaces
+
+### Credits
+
+https://www.hauntedrooms.co.uk/21-most-haunted-places-in-the-world
+https://whyy.org/articles/history-behind-the-walls-how-philadelphias-most-famous-haunted-house-began/

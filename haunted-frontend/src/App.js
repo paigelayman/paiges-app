@@ -5,6 +5,7 @@ import axios from 'axios'
 function App() {
   const [countries, updateCountries] = useState([])
   const [formState, setFormState] = useState({ name: '', image: '', place: '' })
+
   useEffect(() => {
     const apiCall = async () => {
       let response = await axios.get('http://localhost:3001/countries')
@@ -27,9 +28,8 @@ function App() {
       .catch((error) => {
         return error
       })
-    console.log(addedCountry)
-    // updateCountries([...countries, newCountry.data])
-    // setFormState({ name: '', image: '', place: '' })
+    updateCountries([...countries, addedCountry.data])
+    setFormState({ name: '', image: '', place: '' })
   }
 
   return (
