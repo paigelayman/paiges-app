@@ -17,15 +17,15 @@ app.get('/', (req, res) => {
   res.send({ msg: 'route being hit' })
 })
 
-app.get('/country', countryController.getCountries)
-app.post('/country', countryController.addCountry)
-app.put('/country/:id', countryController.updateCountry)
-app.delete('/country/:id', countryController.removeCountry)
+app.get('/countries', countryController.getCountries)
+app.post('/countries', countryController.addCountry)
+app.put('/countries/:id', countryController.updateCountry)
+app.delete('/countries/:id', countryController.removeCountry)
 
-app.get('/place', placeController.getPlaces)
-app.post('/place', placeController.addPlace)
-app.put('/place/:id', placeController.updatePlace)
-app.delete('/place/:id', placeController.removePlace)
+app.get('/places', placeController.getPlaces)
+app.post('/places', placeController.addPlace)
+app.put('/places/:id', placeController.updatePlace)
+app.delete('/places/:id', placeController.removePlace)
 
 app.listen(PORT, () => {
   console.log(`Express server listening on ${PORT}`)
