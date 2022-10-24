@@ -6,6 +6,7 @@ const placeSchema = new Schema({
   description: { type: String, required: true },
   hauntedYear: { type: Number, required: true },
   image: { type: String, required: true }
+  // places: [{ place_id }]
 })
 
 module.exports = placeSchema

@@ -1,17 +1,18 @@
 const express = require('express')
 const PORT = process.env.PORT || 3001
 const db = require('./db')
-const { Country } = require('./models')
+const { Country, Place } = require('./models')
+const countryController = require('./controllers/CountryController.js')
 
 const app = express()
+
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send({ msg: 'route being hit' })
 })
 
-app.post('/countries', (req, res) => {
-  res.send('country post route hit')
-})
+app.get('/country', countryController.getCountries)
 
 app.listen(PORT, () => {
   console.log(`Express server listening on ${PORT}`)
