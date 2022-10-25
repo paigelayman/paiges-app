@@ -42,6 +42,11 @@ img {
   height: 40px;
   border: 2px solid black
 }
+#hauntimage {
+  width: 100px;
+  height: 60px
+}
+
 body{
   background-image: url('https://images.pexels.com/photos/3772353/pexels-photo-3772353.jpeg?auto=compress&cs=tinysrgb&w=300');
   color: #b0a9a9;
