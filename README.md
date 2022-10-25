@@ -34,3 +34,10 @@ https://www.sbs.com.au/movies/review/muirhouse-review
 https://www.kayak.co.uk/news/most-haunted-places-in-the-world/
 https://evanevanstours.com/blog/the-uks-most-haunted-locations/
 https://www.haunted-houses.co.uk/ancient-ram-inn-ghost-hunt/
+https://ghostwatch.net/paranormal-reports/haunted-locations/report/27-fort-george-nova-scotia
+https://blog.bimsmith.com/Spooky-Architecture-10-Halloween-Caliber-Buildings-from-Around-the-World
+https://visitsweden.com/where-to-stay/haunted-houses/
+https://thelittlehouseofhorrors.com/lawang-sewu/
+https://www.travelandleisure.com/holiday-travel/halloween/most-haunted-places-in-europe
+https://www.scotsman.com/lifestyle/travel/worlds-scariest-holiday-destination-island-dolls-has-left-holidaymakers-spooked-811460
+https://en.wikipedia.org/wiki/Flag_of_the_United_States

@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+img {
+  width: 75px;
+  height: 40px;
+}
+body{
+  background-image: url('https://images.pexels.com/photos/3772353/pexels-photo-3772353.jpeg?auto=compress&cs=tinysrgb&w=300');
+  color: white;
+  background-size: cover;
+}

@@ -38,6 +38,7 @@ function App() {
       {countries.map((country) => (
         <div key={country._id}>
           <h2>{country.name}</h2>
+          <img src={country.image} />
         </div>
       ))}
       <h3>Add Country: </h3>
