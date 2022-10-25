@@ -38,13 +38,14 @@ const Places = (props) => {
   return (
     <div className="places">
       <h1>Haunted Places</h1>
-      <button>View All</button>
       {places.map((place) => (
         <div key={place._id}>
           <h2>{place.name}</h2>
-          <img src={place.image} alt="place" />
+          <img src={place.image} id="haunt-image" alt="place" />
+          <p>{place.description}</p>
         </div>
       ))}
+      <button> <Link to='/'>Back to Countries</Link></button>
       <h3>Add Haunted Place: </h3>
       <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name: </label>
@@ -55,11 +56,8 @@ const Places = (props) => {
         <input id="description" value={formState.description} onChange={handleChange} />
         <label htmlFor="hauntedYear">Year:</label>
         <input id="hauntedYear" value={formState.place} onChange={handleChange} />
-        <label htmlFor="hauntedYear">Year:</label>
-        <input id="hauntimage" value={formState.image} onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
-      <footer> <Link to='/'>Back to Countries</Link></footer>
     </div>
   )
 }

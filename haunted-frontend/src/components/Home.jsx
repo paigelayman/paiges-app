@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
@@ -38,23 +37,28 @@ const Home = (props) => {
     navigate('/')
   }
 
+  const viewPlaces = (country) => {
+    navigate(`${country.place}`)
+  }
+
   return (
     <div className="Home">
       <h1>Countries</h1>
-      <button>
-        <Link to="/places">View All</Link>
-      </button>
+    
       {countries.map((country) => (
         <div key={country._id}>
           <h2>{country.name}</h2>
-          <img src={country.image} alt="flag" />
+          <img src={country.image} alt="flag" onClick={() => viewPlaces()}/>
         </div>
       ))}
+        <button>
+        <Link to="/places">View All Haunted Places</Link>
+        </button>
       <h3>Add Country: </h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
-        <label htmlFor="image">Image Link:</label>
+        <label htmlFor="image">Flag Image Link:</label>
         <input id="image" value={formState.image} onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
