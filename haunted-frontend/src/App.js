@@ -39,6 +39,7 @@ function App() {
         <div key={country._id}>
           <h2>{country.name}</h2>
           <img src={country.image} />
+          <h3>{country.place}</h3>
         </div>
       ))}
       <h3>Add Country: </h3>
