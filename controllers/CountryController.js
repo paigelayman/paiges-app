@@ -19,6 +19,13 @@ const getCountries = async (req, res) => {
   }
 }
 
+const getOneCountry = async (req, res) => {
+  console.log(req.params)
+  const { id } = req.params
+  const country = await Country.findById(id).populate('countries')
+  return res.send(country)
+}
+
 const updateCountry = async (req, res) => {
   try {
     let fixCountry = await Country.findByIdAndUpdate(req.params.id, req.body, {
@@ -46,5 +53,6 @@ module.exports = {
   getCountries,
   addCountry,
   updateCountry,
-  removeCountry
+  removeCountry,
+  getOneCountry
 }

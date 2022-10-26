@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Inspiration&family=Mansalva&display=swap');
+
 img {
   width: 75px;
   height: 40px;
@@ -12,14 +15,16 @@ body{
   background-image: url('https://images.pexels.com/photos/3772353/pexels-photo-3772353.jpeg?auto=compress&cs=tinysrgb&w=300');
   color: #b0a9a9;
   background-size: 100%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:  'Mansalva', cursive;
   opacity: 0.75;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
   font-style: italic;
   margin-bottom: 0.5cm;
+  font-family:  'Eater', cursive;
+  color: #9c1121;
 }
 
 .link {
@@ -53,7 +58,7 @@ border: 2px solid white;
 color: white;
 padding: 0.25em;
 margin-top: 8px;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-family: 'Mansalva', cursive;
 }
 .submit:hover, .link-button:hover{
   background-color: white;
@@ -61,6 +66,15 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   cursor: pointer
 }
 
-.countries, .places{
+/* .countries, .places{
 
+} */
+
+h2{
+  font-size: 30px
+}
+
+h2:hover {
+color: black;
+cursor: pointer
 }

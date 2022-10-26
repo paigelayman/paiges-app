@@ -2,15 +2,25 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-const Country = () => {
 
+const Country = () => {
 let { id } = useParams()
-console.log(id)
+  const [country, showCountry] = useState('')
+  useEffect(() => {
+    const apiCall = async () => {
+      let response = await axios.get(`http://localhost:3001/countries/${id}`)
+      showCountry(response.data)
+    }
+    apiCall()
+  }, [])
+
 
   return (
-    <h1>Country</h1> 
-  )  
-}
+    <div>
+      <div>{country.places}</div>
+    </div>  
+  )
+  }
 
 
 export default Country
