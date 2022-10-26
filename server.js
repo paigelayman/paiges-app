@@ -4,8 +4,7 @@ const cors = require('cors')
 const PORT = process.env.PORT || 3001
 const db = require('./db')
 const { Country, Place } = require('./models')
-const countryController = require('./controllers/countryController.js')
-const placeController = require('./controllers/placeController.js')
+
 const app = express()
 
 app.use(express.static(`${__dirname}/haunted-frontend/build`))
@@ -13,6 +12,9 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(logger('dev'))
 app.use(express.json())
+
+const countryController = require('./controllers/countryController.js')
+const placeController = require('./controllers/placeController.js')
 
 app.get('/', (req, res) => {
   res.send({ msg: 'route being hit' })
