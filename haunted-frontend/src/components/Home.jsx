@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-router-dom' 
@@ -36,6 +35,9 @@ const Home = (props) => {
     setFormState({ name: '', image: '', place: '' })
     navigate('/')
   }
+  const getPlace = (places) => {
+    navigate(`places/${places}`)
+  }
 
 
   return (
@@ -45,7 +47,7 @@ const Home = (props) => {
       {countries.map((country) => (
         <div key={country._id}>
           <h2>{country.name}</h2>
-          <img src={country.image} alt="flag" />
+          <img src={country.image} alt="flag" onClick={() => getPlace(places)}/>
         </div>
       ))}
         <button>

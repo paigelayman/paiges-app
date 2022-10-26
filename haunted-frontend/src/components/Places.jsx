@@ -42,6 +42,7 @@ const Places = () => {
         <div key={place._id}>
           <h2>{place.name}</h2>
           <img src={place.image} id="haunt-image" alt="place" />
+          <p className = 'year'>Haunted Since {place.hauntedYear}</p>
           <p>{place.description}</p>
         </div>
       ))}

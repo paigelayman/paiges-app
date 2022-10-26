@@ -25,7 +25,7 @@ https://lucid.app/lucidchart/3d56114a-9468-4842-b27f-6677f757155c/edit?viewport_
 
 https://github.com/paigelayman/paigeshauntedplaces
 
-###### Credits
+#### Credits
 
 https://www.hauntedrooms.co.uk/21-most-haunted-places-in-the-world
 https://whyy.org/articles/history-behind-the-walls-how-philadelphias-most-famous-haunted-house-began/
@@ -35,7 +35,7 @@ https://www.kayak.co.uk/news/most-haunted-places-in-the-world/
 https://evanevanstours.com/blog/the-uks-most-haunted-locations/
 https://www.haunted-houses.co.uk/ancient-ram-inn-ghost-hunt/
 https://ghostwatch.net/paranormal-reports/haunted-locations/report/27-fort-george-nova-scotia
-https://blog.bimsmith.com/Spooky-Architecture-10-Halloween-Caliber-Buildings-from-Around-the-World
+https://darktourists.com/wp-content/uploads/2020/05/Gravure_de_Octave-Cha%CC%82teau_de_Brissac.jpg
 https://visitsweden.com/where-to-stay/haunted-houses/
 https://thelittlehouseofhorrors.com/lawang-sewu/
 https://www.travelandleisure.com/holiday-travel/halloween/most-haunted-places-in-europe
