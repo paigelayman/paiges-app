@@ -43,9 +43,8 @@ const Home = (props) => {
   return (
     <div className="Home">
       <h1>Countries</h1>
-    
       {countries.map((country) => (
-        <div key={country._id}>
+        <div className="countries" key={country._id}>
           <h2><Link className='link' to='/places'>{country.name}</Link></h2>
           <img src={country.image} alt="flag" />
         </div>
@@ -53,13 +52,14 @@ const Home = (props) => {
         <button>
         <Link to="/places">View All Haunted Places</Link>
         </button>
-      <h3>Add Country: </h3>
+      
       <form onSubmit={handleSubmit}>
+      <h4>Add Country: </h4>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
         <label htmlFor="image">Flag Image Link:</label>
         <input id="image" value={formState.image} onChange={handleChange} />
-        <button type="submit">Submit</button>
+        <button className='submit' type="submit">Submit</button>
       </form>
     </div>
   )

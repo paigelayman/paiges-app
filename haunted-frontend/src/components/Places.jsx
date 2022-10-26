@@ -39,7 +39,7 @@ const Places = () => {
     <div className="places">
       <h1>Haunted Places</h1>
       {places.map((place) => (
-        <div key={place._id}>
+        <div className="places" key={place._id}>
           <h2>{place.name}</h2>
           <img src={place.image} id="haunt-image" alt="place" />
           <p className = 'year'>Haunted Since {place.hauntedYear}</p>
@@ -47,8 +47,9 @@ const Places = () => {
         </div>
       ))}
       <button> <Link to='/'>Back to Countries</Link></button>
-      <h3>Add Haunted Place: </h3>
+     
       <form onSubmit={handleSubmit}>
+      <h4>Add Haunted Place: </h4>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
         <label htmlFor="location">Location:</label>
@@ -59,7 +60,7 @@ const Places = () => {
         <input id="hauntedYear" value={formState.hauntedYear} onChange={handleChange} />
         <label htmlFor="image">Image Link:</label>
         <input id="image" value={formState.image} onChange={handleChange} />
-        <button type="submit">Submit</button>
+        <button className='submit' type="submit">Submit</button>
       </form>
     </div>
   )
