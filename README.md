@@ -25,7 +25,7 @@ https://lucid.app/lucidchart/3d56114a-9468-4842-b27f-6677f757155c/edit?viewport_
 
 https://github.com/paigelayman/paigeshauntedplaces
 
-### Credits
+###### Credits
 
 https://www.hauntedrooms.co.uk/21-most-haunted-places-in-the-world
 https://whyy.org/articles/history-behind-the-walls-how-philadelphias-most-famous-haunted-house-began/
