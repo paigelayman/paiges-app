@@ -46,10 +46,10 @@ const Places = () => {
           <p>{place.description}</p>
         </div>
       ))}
-      <button> <Link to='/'>Back to Countries</Link></button>
+      <button className='link-button'> <Link className='link' to='/'>Back to Countries</Link></button>
      
       <form onSubmit={handleSubmit}>
-      <h4>Add Haunted Place: </h4>
+      <h3>Add Haunted Place: </h3>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
         <label htmlFor="location">Location:</label>

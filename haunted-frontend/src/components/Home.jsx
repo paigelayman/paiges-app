@@ -49,12 +49,12 @@ const Home = (props) => {
           <img src={country.image} alt="flag" />
         </div>
       ))}
-        <button>
-        <Link to="/places">View All Haunted Places</Link>
+        <button className='link-button'>
+        <Link className = 'link' to="/places">View All Haunted Places</Link>
         </button>
       
       <form onSubmit={handleSubmit}>
-      <h4>Add Country: </h4>
+      <h3>Add Country: </h3>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
         <label htmlFor="image">Flag Image Link:</label>

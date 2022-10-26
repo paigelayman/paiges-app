@@ -65,6 +65,9 @@ h1 {
   color: #b0a9a9;
   text-decoration: none;
 }
+.link:hover{
+color: black
+}
 div{
   display: flex;
   flex-direction: column;
@@ -77,24 +80,24 @@ form {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 15em;
-  min-height: 10em;
+  min-height: 5em;
   margin: 2em auto;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
   color: black
 }
-.submit {
+.submit, .link-button {
 background-color: black;
 border: 2px solid white;
 color: white;
 padding: 0.25em;
 margin-top: 8px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.submit:hover{
+.submit:hover, .link-button:hover{
   background-color: white;
   color: black;
   cursor: pointer
 }
-.countries, .places{
+/* .countries, .places{
  
-}
+} */
