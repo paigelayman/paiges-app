@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const Places = (props) => {
+const Places = () => {
   const [formState, setFormState] = useState({ name: '', image: '', place: '' })
   const [places, updatePlaces] = useState([])
   const navigate = useNavigate()
@@ -55,7 +55,7 @@ const Places = (props) => {
         <label htmlFor="description">Description:</label>
         <input id="description" value={formState.description} onChange={handleChange} />
         <label htmlFor="hauntedYear">Year:</label>
-        <input id="hauntedYear" value={formState.place} onChange={handleChange} />
+        <input id="hauntedYear" value={formState.hauntedYear} onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
     </div>

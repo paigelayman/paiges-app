@@ -37,9 +37,6 @@ const Home = (props) => {
     navigate('/')
   }
 
-  const viewPlaces = (country) => {
-    navigate(`${country.place}`)
-  }
 
   return (
     <div className="Home">
@@ -48,7 +45,7 @@ const Home = (props) => {
       {countries.map((country) => (
         <div key={country._id}>
           <h2>{country.name}</h2>
-          <img src={country.image} alt="flag" onClick={() => viewPlaces()}/>
+          <img src={country.image} alt="flag" />
         </div>
       ))}
         <button>

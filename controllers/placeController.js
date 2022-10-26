@@ -19,6 +19,12 @@ const getPlaces = async (req, res) => {
   }
 }
 
+const getOnePlace = async (req, res) => {
+  const { id } = req.params
+  const placeId = await Place.findById(id)
+  return res.send({ placeId }).populate('places')
+}
+
 const updatePlace = async (req, res) => {
   try {
     let fixPlace = await Place.findByIdAndUpdate(req.params.id, req.body, {
@@ -43,5 +49,6 @@ module.exports = {
   getPlaces,
   addPlace,
   updatePlace,
-  removePlace
+  removePlace,
+  getOnePlace
 }
