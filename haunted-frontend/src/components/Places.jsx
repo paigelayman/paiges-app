@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const Places = () => {
-  const [formState, setFormState] = useState({ name: '', image: '', place: '' })
+  const [formState, setFormState] = useState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
   const [places, updatePlaces] = useState([])
   const navigate = useNavigate()
 
@@ -31,8 +31,8 @@ const Places = () => {
         return error
       })
     updatePlaces([...places, addedPlace.data])
-    setFormState({ name: '', image: '', place: '' })
-    navigate('/')
+    setFormState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
+    navigate('/places')
   }
 
   return (
@@ -48,7 +48,7 @@ const Places = () => {
       <button> <Link to='/'>Back to Countries</Link></button>
       <h3>Add Haunted Place: </h3>
       <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name: </label>
+        <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
         <label htmlFor="location">Location:</label>
         <input id="location" value={formState.location} onChange={handleChange} />
@@ -56,6 +56,8 @@ const Places = () => {
         <input id="description" value={formState.description} onChange={handleChange} />
         <label htmlFor="hauntedYear">Year:</label>
         <input id="hauntedYear" value={formState.hauntedYear} onChange={handleChange} />
+        <label htmlFor="image">Image Link:</label>
+        <input id="image" value={formState.image} onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
     </div>
