@@ -20,9 +20,10 @@ const getPlaces = async (req, res) => {
 }
 
 const getOnePlace = async (req, res) => {
+  console.log(req.params)
   const { id } = req.params
-  const placeId = await Place.findById(id)
-  return res.send({ placeId }).populate('places')
+  const place = await Place.findById(id).populate('places')
+  return res.send(place)
 }
 
 const updatePlace = async (req, res) => {

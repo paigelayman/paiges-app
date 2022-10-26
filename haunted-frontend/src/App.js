@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Home from './components/Home'
+import Country from './components/Country'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="places" element={<Places />} />
+          <Route path="countries/:id" element={<Country />} />
         </Routes>
       </main>
     </div>

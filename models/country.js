@@ -4,7 +4,7 @@ const countrySchema = new Schema(
   {
     name: { type: String, required: true },
     image: { type: String, required: true },
-    places: [{ type: Schema.Types.ObjectId, ref: 'Country' }]
+    places: [{ type: Schema.Types.ObjectId, ref: 'Place' }]
   },
   { timestamps: true }
 )
