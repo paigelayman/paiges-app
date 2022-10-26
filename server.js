@@ -7,7 +7,7 @@ const { Country, Place } = require('./models')
 
 const app = express()
 
-app.use(express.static(`${__dirname}/haunted-frontend/build`))
+// app.use(express.static(`${__dirname}/haunted-frontend/build`))
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(logger('dev'))
@@ -21,18 +21,19 @@ app.get('/', (req, res) => {
 })
 
 app.get('/countries', countryController.getCountries)
+app.get('/countries/:id', countryController.getOneCountry)
 app.post('/countries', countryController.addCountry)
 app.put('/countries/:id', countryController.updateCountry)
 app.delete('/countries/:id', countryController.removeCountry)
 
 app.get('/places', placeController.getPlaces)
-app.post('/places', placeController.addPlace)
+app.post('/places/:id', placeController.addPlace)
 app.put('/places/:id', placeController.updatePlace)
 app.delete('/places/:id', placeController.removePlace)
 
-app.get('/*', (req, res) => {
-  res.sendFile(`${__dirname}/haunted-frontend/build/index.html`)
-})
+// app.get('/*', (req, res) => {
+//   res.sendFile(`${__dirname}/haunted-frontend/build/index.html`)
+// })
 
 app.listen(PORT, () => {
   console.log(`Express server listening on ${PORT}`)

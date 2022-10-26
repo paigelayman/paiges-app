@@ -22,7 +22,8 @@ const getCountries = async (req, res) => {
 const getOneCountry = async (req, res) => {
   console.log(req.params)
   const { id } = req.params
-  const country = await Country.findById(id).populate('countries')
+  const country = await Country.findById(id).populate('places')
+  console.log(country)
   return res.send(country)
 }
 
