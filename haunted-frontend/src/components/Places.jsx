@@ -1,51 +1,52 @@
 import React from 'react'
 import {Link} from 'react-router-dom' 
-import { useState, useEffect } from 'react'
+import { useState, useEffect} from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import {useParams } from 'react-router-dom'
 
-const Places = () => {
+const Places = (props) => {
   const [formState, setFormState] = useState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
   const [places, updatePlaces] = useState([])
-  const navigate = useNavigate()
+  let {id} = useParams()
+  
 
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
+const handleChange = (event) => {
+  setFormState({ ...formState, [event.target.id]: event.target.value })
+}
+useEffect(() => {
+  const apiCall = async () => {
+  let response = await axios.get(`http://localhost:3001/places/`)
+  updatePlaces(response.data)
   }
-  useEffect(() => {
-    const apiCall = async () => {
-      let response = await axios.get(`http://localhost:3001/places/${places}`)
-      updatePlaces(response.data)
-    }
-    apiCall()
-  }, [])
+  apiCall()
+}, [])
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    let addedPlace = await axios
-      .post('http://localhost:3001/places', formState)
-      .then((response) => {
-        return response
-      })
-      .catch((error) => {
-        return error
-      })
+const handleSubmit = async (event) => {
+  event.preventDefault()
+  let addedPlace = await axios
+    .post(`http://localhost:3001/places/`, formState)
+    .then((response) => {
+      return response
+    })
+    .catch((error) => {
+      return error
+    })
     updatePlaces([...places, addedPlace.data])
     setFormState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
-    navigate('/places')
-  }
 
-  return (
-    <div className="places">
-      <h1>Haunted Places</h1>
-      {places.map((place) => (
-        <div className="places" key={place._id}>
-          <h2>{place.name}</h2>
-          <img src={place.image} id="haunt-image" alt="place" />
-          <p className = 'year'>Haunted Since {place.hauntedYear}</p>
-          <p className='description'>{place.description}</p>
-        </div>
-      ))}
+}
+
+return (
+  <div className="places">
+    <h1>Haunted Places</h1>
+    {places ? places.map((place) => (
+    <div className="places" key={place._id}>
+      <h2>{place.name}</h2>
+        <img src={place.image} id="haunt-image" alt="place" />
+        <p className = 'year'>Haunted Since {place.hauntedYear}</p>
+        <p className='description'>{place.description}</p>
+    </div>
+    )): "" }
       <button className='link-button'> <Link className='link' to='/'>Back to Countries</Link></button>
      
       <form onSubmit={handleSubmit}>

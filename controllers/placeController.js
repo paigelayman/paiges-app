@@ -1,13 +1,14 @@
-const { Place, Country } = require('../models')
+const { Place } = require('../models')
 const express = require('express')
 
 const addPlace = async (req, res) => {
-  const { id } = req.params
   try {
-    let newPlace = await Place.create(req.body)
-    let country = await Country.findById(id)
-    country.places.push(newPlace._id)
+    let newPlace = await new Place(req.body)
+    await newPlace.save()
+    let updatedCountry = await Country.findById(req.params.id)
+    updatedCountry.places.push(newPlace._id)
     await country.save()
+    console.log('hit')
     res.send(newPlace)
   } catch (error) {
     return res.status(500).send(error.message)
