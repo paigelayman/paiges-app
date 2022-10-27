@@ -80,3 +80,10 @@ h2:hover {
 color: black;
 cursor: pointer
 }
+.description {
+  display: inline-block;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+.countries{
+}

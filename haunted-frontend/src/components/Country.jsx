@@ -24,7 +24,7 @@ let { id } = useParams()
       <h2>{place.name}</h2>
       <img src={place.image} id="haunt-image" alt="place" />
       <p className = 'year'>Haunted Since {place.hauntedYear}</p>
-      <p>{place.description}</p>
+      <p className='description'>{place.description}</p>
     </div>
     )): ''}
         <button className='link-button'>
