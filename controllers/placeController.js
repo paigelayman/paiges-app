@@ -7,7 +7,7 @@ const addPlace = async (req, res) => {
     let newPlace = await Place.create(req.body)
     let country = await Country.findById(id)
     country.places.push(newPlace._id)
-    country.save()
+    await country.save()
     res.send(newPlace)
   } catch (error) {
     return res.status(500).send(error.message)
