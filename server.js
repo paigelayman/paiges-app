@@ -13,18 +13,18 @@ app.use(express.urlencoded({ extended: true }))
 app.use(logger('dev'))
 app.use(express.json())
 
-const countryController = require('./controllers/countryController.js')
+const theCountryController = require('./controllers/theCountryController.js')
 const placeController = require('./controllers/placeController.js')
 
 app.get('/', (req, res) => {
   res.send({ msg: 'route being hit' })
 })
 
-app.get('/countries', countryController.getCountries)
-app.get('/countries/:id', countryController.getOneCountry)
-app.post('/countries', countryController.addCountry)
-app.put('/countries/:id', countryController.updateCountry)
-app.delete('/countries/:id', countryController.removeCountry)
+app.get('/countries', theCountryController.getCountries)
+app.get('/countries/:id', theCountryController.getOneCountry)
+app.post('/countries', theCountryController.addCountry)
+app.put('/countries/:id', theCountryController.updateCountry)
+app.delete('/countries/:id', theCountryController.removeCountry)
 
 app.get('/places', placeController.getPlaces)
 app.post('/places/:id', placeController.addPlace)
