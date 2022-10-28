@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import {Link} from 'react-router-dom' 
 
 
 
-const Home = (props) => {
+const Home = () => {
   const [formState, setFormState] = useState({ name: '', image: '', place: '' })
   const [countries, updateCountries] = useState([])
   const navigate = useNavigate()
+ 
 
 const handleChange = (event) => {
   setFormState({ ...formState, [event.target.id]: event.target.value })
@@ -35,7 +36,6 @@ const handleSubmit = async (event) => {
     })
   updateCountries([...countries, addedCountry.data])
   setFormState({ name: '', image: '', place: '' })
-  navigate('/')
   }
 
 const getPlace = (id) => {
@@ -50,6 +50,7 @@ return (
       <div className="countries" key={country._id}>
         <h2 onClick={()=>{getPlace(country._id)}}>{country.name}</h2>
         <img src={country.image} alt="flag" />
+        
       </div>
     ))}
       <button className='link-button'>
@@ -64,6 +65,7 @@ return (
         <input id="image" value={formState.image} onChange={handleChange} />
         <button className='submit' type="submit">Submit</button>
       </form>
+     
     </div>
   )
 }

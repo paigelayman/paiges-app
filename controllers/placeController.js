@@ -3,11 +3,11 @@ const express = require('express')
 
 const addPlace = async (req, res) => {
   try {
-    let newPlace = await new Place(req.body)
+    let newPlace = await Place.create(req.body)
     await newPlace.save()
     let updatedCountry = await Country.findById(req.params.id)
     updatedCountry.places.push(newPlace._id)
-    await countries.save()
+    await updatedCountry.save()
     res.send(newPlace)
   } catch (error) {
     return res.status(500).send(error.message)

@@ -49,7 +49,7 @@ return (
     )): "" }
       <button className='link-button'> <Link className='link' to='/'>Back to Countries</Link></button>
      
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
       <h3>Add Haunted Place: </h3>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
@@ -62,7 +62,7 @@ return (
         <label htmlFor="image">Image Link:</label>
         <input id="image" value={formState.image} onChange={handleChange} />
         <button className='submit' type="submit">Submit</button>
-      </form>
+      </form> */}
     </div>
   )
 }
