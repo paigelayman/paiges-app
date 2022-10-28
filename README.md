@@ -4,7 +4,7 @@
 
 ### Description
 
-This is going to be a full stack app using Mongoose, Express, React, and Node. The app will have a Nav bar that will take you to About or Home, and Home will show you a list of the most haunted places in the world. The user can click to see more information/pictures, and they will also have an option to add a new place.
+This a full stack app using Mongoose, Express, React, and Node. The app opens to a Home page which shows a list of countries, and you can click each country to view the most haunted places in that country. The user has an option to add or update a new place, or can delete a whole country.
 
 ### How to get started
 

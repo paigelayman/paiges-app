@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 
 const Home = () => {
-  const [formState, setFormState] = useState({ name: '', image: '', place: '' })
+  const [formState, setFormState] = useState({ name: '', image: ''})
   const [countries, updateCountries] = useState([])
   const navigate = useNavigate()
  
@@ -35,7 +35,7 @@ const handleSubmit = async (event) => {
       return error
     })
   updateCountries([...countries, addedCountry.data])
-  setFormState({ name: '', image: '', place: '' })
+  setFormState({ name: '', image: ''})
   }
 
 const getPlace = (id) => {
@@ -46,13 +46,12 @@ const getPlace = (id) => {
 return (
   <div className="Home">
     <h1>Countries</h1>
-    {countries.map((country) => (
+    {countries ? countries.map((country) => (
       <div className="countries" key={country._id}>
         <h2 onClick={()=>{getPlace(country._id)}}>{country.name}</h2>
         <img src={country.image} alt="flag" />
-        
       </div>
-    ))}
+    )): ''}
       <button className='link-button'>
       <Link className = 'link' to="/places">View All Haunted Places</Link>
       </button>

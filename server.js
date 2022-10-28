@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 app.get('/countries', theCountryController.getCountries)
 app.get('/countries/:id', theCountryController.getOneCountry)
-app.post('/countries/:id', theCountryController.addCountry)
+app.post('/countries', theCountryController.addCountry)
 app.put('/countries/:id', theCountryController.updateCountry)
 app.delete('/countries/:id', theCountryController.removeCountry)
 
