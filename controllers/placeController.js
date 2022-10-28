@@ -1,4 +1,4 @@
-const { Place } = require('../models')
+const { Place, Country } = require('../models')
 const express = require('express')
 
 const addPlace = async (req, res) => {
@@ -7,8 +7,7 @@ const addPlace = async (req, res) => {
     await newPlace.save()
     let updatedCountry = await Country.findById(req.params.id)
     updatedCountry.places.push(newPlace._id)
-    await country.save()
-    console.log('hit')
+    await countries.save()
     res.send(newPlace)
   } catch (error) {
     return res.status(500).send(error.message)

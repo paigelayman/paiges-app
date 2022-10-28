@@ -11,49 +11,58 @@ const Home = (props) => {
   const [countries, updateCountries] = useState([])
   const navigate = useNavigate()
 
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
-  }
-  useEffect(() => {
-    const apiCall = async () => {
-      let response = await axios.get('http://localhost:3001/countries')
-      updateCountries(response.data)
+const handleChange = (event) => {
+  setFormState({ ...formState, [event.target.id]: event.target.value })
+}
+
+useEffect(() => {
+  const apiCall = async () => {
+  let response = await axios.get('http://localhost:3001/countries')
+    updateCountries(response.data)
     }
-    apiCall()
+  apiCall()
   }, [])
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    let addedCountry = await axios
-      .post('http://localhost:3001/countries', formState)
-      .then((response) => {
-        return response
-      })
-      .catch((error) => {
-        return error
-      })
-    updateCountries([...countries, addedCountry.data])
-    setFormState({ name: '', image: '', place: '' })
-    navigate('/')
+const handleSubmit = async (event) => {
+  event.preventDefault()
+  let addedCountry = await axios
+    .post('http://localhost:3001/countries', formState)
+    .then((response) => {
+      return response
+    })
+    .catch((error) => {
+      return error
+    })
+  updateCountries([...countries, addedCountry.data])
+  setFormState({ name: '', image: '', place: '' })
+  navigate('/')
   }
 
-  const getPlace = (id) => {
-    navigate(`countries/${id}`)
+const getPlace = (id) => {
+  navigate(`countries/${id}`)
+}
+
+
+  const deleteCountry = async () => {
+    let response = await axios.get('http://localhost:3001/countries')
+    deleteCountry(response.data)
   }
+  
 
 
-  return (
-    <div className="Home">
-      <h1>Countries</h1>
-      {countries.map((country) => (
-        <div className="countries" key={country._id}>
-          <h2 onClick={()=>{getPlace(country._id)}}>{country.name}</h2>
-          <img src={country.image} alt="flag" />
-        </div>
-      ))}
-        <button className='link-button'>
-        <Link className = 'link' to="/places">View All Haunted Places</Link>
-        </button>
+
+return (
+  <div className="Home">
+    <h1>Countries</h1>
+    {countries.map((country) => (
+      <div className="countries" key={country._id}>
+        <h2 onClick={()=>{getPlace(country._id)}}>{country.name}</h2>
+        <img src={country.image} alt="flag" />
+      </div>
+    ))}
+      <button className='link-button'>
+      <Link className = 'link' to="/places">View All Haunted Places</Link>
+      </button>
       
       <form onSubmit={handleSubmit}>
       <h3>Add Country: </h3>

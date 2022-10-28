@@ -4,10 +4,10 @@ import { useState, useEffect} from 'react'
 import axios from 'axios'
 import {useParams } from 'react-router-dom'
 
-const Places = (props) => {
+const Places = () => {
   const [formState, setFormState] = useState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
   const [places, updatePlaces] = useState([])
-  let {id} = useParams()
+  
   
 
 const handleChange = (event) => {
@@ -15,7 +15,7 @@ const handleChange = (event) => {
 }
 useEffect(() => {
   const apiCall = async () => {
-  let response = await axios.get(`http://localhost:3001/places/`)
+  let response = await axios.get(`http://localhost:3001/places`)
   updatePlaces(response.data)
   }
   apiCall()
@@ -24,7 +24,7 @@ useEffect(() => {
 const handleSubmit = async (event) => {
   event.preventDefault()
   let addedPlace = await axios
-    .post(`http://localhost:3001/places/`, formState)
+    .post(`http://localhost:3001/places`, formState)
     .then((response) => {
       return response
     })

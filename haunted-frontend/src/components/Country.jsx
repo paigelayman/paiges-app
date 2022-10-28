@@ -24,8 +24,7 @@ const [places, updatePlaces] = useState([])
   }, [])
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let addedPlace = await axios
-      .post(`http://localhost:3001/countries/${id}`, formState)
+    let addedPlace = await axios.post(`http://localhost:3001/countries/${id}`, formState)
       .then((response) => {
         return response
       })
@@ -34,7 +33,6 @@ const [places, updatePlaces] = useState([])
       })
     updatePlaces([...places, addedPlace.data])
     setFormState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
-    
   }
 
 
