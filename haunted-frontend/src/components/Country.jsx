@@ -33,6 +33,13 @@ const [places, updatePlaces] = useState([])
       })
     updatePlaces([...places, addedPlace.data])
     setFormState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
+}
+
+
+const deletePlace = async (event) => {
+  event.preventDefault()
+  let deletedPlace = await axios.delete(`http://localhost:3001/countries/${id}`)
+  showCountry(deletedPlace)
   }
 
 
@@ -45,6 +52,7 @@ const [places, updatePlaces] = useState([])
       <img src={place.image} id="haunt-image" alt="place" />
       <p className = 'year'>Haunted Since {place.hauntedYear}</p>
       <p className='description'>{place.description}</p>
+      <button onClick={deletePlace()}>delete</button>
     </div>
     )): ''}
         <button className='link-button'>

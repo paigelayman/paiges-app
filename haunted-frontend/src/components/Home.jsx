@@ -42,15 +42,7 @@ const getPlace = (id) => {
   navigate(`countries/${id}`)
 }
 
-
-  const deleteCountry = async () => {
-    let response = await axios.get('http://localhost:3001/countries')
-    deleteCountry(response.data)
-  }
   
-
-
-
 return (
   <div className="Home">
     <h1>Countries</h1>
