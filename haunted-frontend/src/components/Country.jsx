@@ -1,15 +1,18 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import {Link} from 'react-router-dom' 
 
 const Country = () => {
 let { id } = useParams()
+const navigate = useNavigate()
 
-const [formState, setFormState] = useState({ name: '',newName: '', location: '',newLocation:'', description: '', newDescription: '', hauntedYear: '',newYear: '', image:'', newImage:''})
+const [formState, setFormState] = useState({ name: '', location: '', description: '', hauntedYear: '', image:''})
 const [countryPlaces, showCountry] = useState('')
-const [places, updatePlaces] = useState([])
+const [places, updatePlaces] = useState('')
+const [countries, updateCountries] = useState('')
+
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
@@ -27,26 +30,34 @@ useEffect(() => {
     let addedPlace = await axios.post(`http://localhost:3001/places/${id}`, formState)
       .then((response) => {
         return response
+         navigate('/')
       })
       .catch((error) => {
         return error
       })
     updatePlaces([...places, addedPlace.data])
     setFormState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
+    navigate(`/countries/${id}`)
+   
 }
-const deleteCountry = async (event) => {
-  event.preventDefault()
-  let deletedCountry = await axios.delete(`http://localhost:3001/countries/${id}`, formState)
-  updatePlaces([places, deletedCountry.data])
-  setFormState({name: '', location: '', description: '', hauntedYear: '', image:''})
-  }
 
 const handleUpdate = async (event) => {
   event.preventDefault()
-  let response = await axios.put(`http://localhost:3001/countries/${id}`, formState)
-  updatePlaces([places, response])
-  setFormState({name: '', image:'', place:''})
+  let newCountry = await axios.put(`http://localhost:3001/countries/${id}`, formState)
+  updateCountries([countries, newCountry.data])
+  setFormState({name: '', image: ''})
+  navigate(`/`)
   }
+
+
+const deleteCountry = async (event) => {
+  event.preventDefault()
+  let deletedCountry = await axios.delete(`http://localhost:3001/countries/${id}`, formState)
+  updateCountries([countries, deletedCountry.data])
+  // setFormState({name: '', location: '', description: '', hauntedYear: '', image:''})
+  navigate(`/`)
+  }
+
 
 
   return (
@@ -55,6 +66,7 @@ const handleUpdate = async (event) => {
       <div>
       <h1></h1>
       <h2>{place.name}</h2>
+      <p>{place.location}</p>
       <img src={place.image} id="haunt-image" alt="place" />
       <p className = 'year'>Haunted Since {place.hauntedYear}</p>
       <p className='description'>{place.description}</p>
@@ -80,24 +92,18 @@ const handleUpdate = async (event) => {
         <button className='submit' type="submit">Submit</button>
       </form>
       <form onSubmit={handleUpdate}>
-      <h3>Update Place: </h3>
+      <h3>Update Country: </h3>
         <label htmlFor="name">Name: </label>
-        <input id="name" value={formState.newName} onChange={handleChange} />
-        <label htmlFor="location">Location:</label>
-        <input id="location" value={formState.newLocation} onChange={handleChange} />
-        <label htmlFor="description">Description:</label>
-        <input id="description" value={formState.newDescription} onChange={handleChange} />
-        <label htmlFor="hauntedYear">Year:</label>
-        <input id="hauntedYear" value={formState.newYear} onChange={handleChange} />
-        <label htmlFor="image">Image Link:</label>
-        <input id="image" value={formState.newImage} onChange={handleChange} />
+        <input id="name" value={formState.name} onChange={handleChange} />
+        <label htmlFor="image">Flag Image Link:</label>
+        <input id="image" value={formState.image} onChange={handleChange} />
         <button className='submit' type="submit">Submit</button>
       </form>
+     
       <button className='link-button' onClick={deleteCountry}>Delete Country</button>
   
     </div>  
   
-    
   )
   }
 

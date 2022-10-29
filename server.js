@@ -28,7 +28,7 @@ app.delete('/countries/:id', theCountryController.removeCountry)
 
 app.get('/places', placeController.getPlaces)
 app.post('/places/:id', placeController.addPlace)
-app.put('/places/:id', placeController.updatePlace)
+app.put('places/:id', placeController.updatePlace)
 app.delete('/places/:id', placeController.removePlace)
 
 app.get('/*', (req, res) => {

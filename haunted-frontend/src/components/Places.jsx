@@ -2,12 +2,13 @@ import React from 'react'
 import {Link} from 'react-router-dom' 
 import { useState, useEffect} from 'react'
 import axios from 'axios'
-import {useParams } from 'react-router-dom'
+import {useParams, useNavigate } from 'react-router-dom'
 
 const Places = () => {
   const [formState, setFormState] = useState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
   const [places, updatePlaces] = useState([])
-  
+  let { id } = useParams()
+const navigate = useNavigate()
   
 
 const handleChange = (event) => {
@@ -36,6 +37,14 @@ const handleSubmit = async (event) => {
 
 }
 
+const handleUpdate = async (event) => {
+  event.preventDefault()
+  let newCountry = await axios.put(`http://localhost:3001/countries/${id}`, formState)
+  updatePlaces([places, newCountry.data])
+  setFormState({name: '', image: ''})
+  navigate(`/`)
+  }
+
 return (
   <div className="places">
     <h1>Haunted Places</h1>
@@ -48,21 +57,14 @@ return (
     </div>
     )): "" }
       <button className='link-button'> <Link className='link' to='/'>Back to Countries</Link></button>
-     
-      {/* <form onSubmit={handleSubmit}>
-      <h3>Add Haunted Place: </h3>
+      <form onSubmit={handleUpdate}>
+      <h3>Update Country: </h3>
         <label htmlFor="name">Name: </label>
         <input id="name" value={formState.name} onChange={handleChange} />
-        <label htmlFor="location">Location:</label>
-        <input id="location" value={formState.location} onChange={handleChange} />
-        <label htmlFor="description">Description:</label>
-        <input id="description" value={formState.description} onChange={handleChange} />
-        <label htmlFor="hauntedYear">Year:</label>
-        <input id="hauntedYear" value={formState.hauntedYear} onChange={handleChange} />
-        <label htmlFor="image">Image Link:</label>
+        <label htmlFor="image">Flag Image Link:</label>
         <input id="image" value={formState.image} onChange={handleChange} />
         <button className='submit' type="submit">Submit</button>
-      </form> */}
+      </form>
     </div>
   )
 }

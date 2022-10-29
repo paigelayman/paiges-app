@@ -4,7 +4,7 @@
 
 ### Description
 
-This a full stack app using Mongoose, Express, React, and Node. The app opens to a Home page which shows a list of countries, and you can click each country to view the most haunted places in that country. The user has an option to add or update a new place, or can delete a whole country.
+This a full stack app using Mongoose, Express, React, and Node. The app opens to a Home page which shows a list of countries, and you can click each country to view the most haunted places in that country. The user has an option to add a new place, or can delete or update a country.
 
 ### How to get started
 
@@ -12,6 +12,15 @@ This a full stack app using Mongoose, Express, React, and Node. The app opens to
 - `cd` into folder
 - Open in broswer with `open.html`
 - To make edits, open in VS code with `code .`
+
+### Technologies Used:
+
+- Country and Place schemas made with mongoose
+- Express was used to create routes that connect the database to the front end
+- React was used to create the front end of the app
+- Functions were written in React components which then rendered on the page in React forms to use CRUD operations
+
+<img src="https://www.hauntedrooms.co.uk/wp-content/uploads/2021/12/Haunted-Island-of-the-Dolls-500x333.jpeg"/>
 
 #### Trello Board Link:
 
@@ -24,6 +33,10 @@ https://lucid.app/lucidchart/3d56114a-9468-4842-b27f-6677f757155c/edit?viewport_
 #### GitHub Link:
 
 https://github.com/paigelayman/paigeshauntedplaces
+
+#### Future Updates:
+
+The desired future updates on this app include the ability to delete a specific places within a country, as well as update that specific place. Also, I would like to possibly add a drop down menu for creating a country.
 
 #### Credits
 
