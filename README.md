@@ -36,7 +36,7 @@ https://github.com/paigelayman/paigeshauntedplaces
 
 #### Future Updates:
 
-The desired future updates on this app include the ability to delete a specific places within a country, as well as update that specific place. Also, I would like to possibly add a drop down menu for creating a country.
+The desired future updates on this app include the ability to delete a specific places within a country, as well as update a specific place. Also, I would like to possibly add a drop down menu for creating a country.
 
 #### Credits
 
