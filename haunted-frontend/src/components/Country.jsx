@@ -8,7 +8,7 @@ const Country = () => {
 let { id } = useParams()
 const navigate = useNavigate()
 
-const [formState, setFormState] = useState({ name: '', location: '', description: '', hauntedYear: '', image:''})
+const [formState, setFormState] = useState({ name: '', placeName: '', location: '', description: '', hauntedYear: '', placeImage: '', image:''})
 const [countryPlaces, showCountry] = useState('')
 const [places, updatePlaces] = useState('')
 const [countries, updateCountries] = useState('')
@@ -30,15 +30,13 @@ useEffect(() => {
     let addedPlace = await axios.post(`http://localhost:3001/places/${id}`, formState)
       .then((response) => {
         return response
-         navigate('/')
       })
       .catch((error) => {
         return error
       })
     updatePlaces([...places, addedPlace.data])
-    setFormState({ name: '', location: '', description: '', hauntedYear: '', image:'' })
+    setFormState({ placeName: '', location: '', description: '', hauntedYear: '', placeImage:'' })
     navigate(`/countries/${id}`)
-   
 }
 
 const handleUpdate = async (event) => {
@@ -54,7 +52,7 @@ const deleteCountry = async (event) => {
   event.preventDefault()
   let deletedCountry = await axios.delete(`http://localhost:3001/countries/${id}`, formState)
   updateCountries([countries, deletedCountry.data])
-  // setFormState({name: '', location: '', description: '', hauntedYear: '', image:''})
+  setFormState({name: '', location: '', description: '', hauntedYear: '', image:''})
   navigate(`/`)
   }
 
@@ -79,16 +77,16 @@ const deleteCountry = async (event) => {
         <button className='link-button'> <Link className='link' to='/'>Back to Countries</Link></button>
         <form onSubmit={handleSubmit}>
       <h3>Add Haunted Place: </h3>
-        <label htmlFor="name">Name: </label>
-        <input id="name" value={formState.name} onChange={handleChange} />
+        <label htmlFor="placeName">Name: </label>
+        <input id="placeName" value={formState.placeName} onChange={handleChange} />
         <label htmlFor="location">Location:</label>
         <input id="location" value={formState.location} onChange={handleChange} />
         <label htmlFor="description">Description:</label>
         <input id="description" value={formState.description} onChange={handleChange} />
         <label htmlFor="hauntedYear">Year:</label>
         <input id="hauntedYear" value={formState.hauntedYear} onChange={handleChange} />
-        <label htmlFor="image">Image Link:</label>
-        <input id="image" value={formState.image} onChange={handleChange} />
+        <label htmlFor="placeImage">Image Link:</label>
+        <input id="placeImage" value={formState.placeImage} onChange={handleChange} />
         <button className='submit' type="submit">Submit</button>
       </form>
       <form onSubmit={handleUpdate}>
