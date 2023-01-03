@@ -10,6 +10,7 @@ const Home = () => {
   const [formState, setFormState] = useState({ name: '', image: ''})
   const [countries, updateCountries] = useState([])
   const navigate = useNavigate()
+  let {id} = useParams()
  
 
 const handleChange = (event) => {
@@ -19,7 +20,7 @@ const handleChange = (event) => {
 useEffect(() => {
   const apiCall = async () => {
   let response = await axios.get('http://localhost:3001/countries')
-    updateCountries(response.data)
+    updateCountries(response.data.countries)
     }
   apiCall()
   }, [])
@@ -64,7 +65,6 @@ return (
         <input id="image" value={formState.image} onChange={handleChange} />
         <button className='submit' type="submit">Submit</button>
       </form>
-     
     </div>
   )
 }
