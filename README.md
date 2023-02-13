@@ -1,6 +1,6 @@
 # Paige's Haunted Places
 
-<img src="./images/Haunted-Cover" width='525px' height='375px'/>
+<img src="./images/Haunted-Cover.png" width='525px' height='375px'/>
 
 ### Description
 
